@@ -1,4 +1,15 @@
 CC = g++
+SRCS = $(wildcard src/*.cpp)
+OBJS = $(patsubst %.cpp, %.o, $(SRCS))
+TARGET = spike
 
-final:
-	$(CC) main.cpp src/random.cpp -o spooky
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $@
+
+%.o: src/%.cpp src/%.h
+	$(CC) -c $< -o $@
+
+clean:
+	rm -f $(TARGET) $(OBJS)
