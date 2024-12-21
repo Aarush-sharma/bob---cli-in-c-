@@ -1,15 +1,9 @@
 CC = g++
-SRCS = $(wildcard src/*.cpp)
-OBJS = $(patsubst %.cpp, %.o, $(SRCS))
-TARGET = spike
+SRCS =  src/arithmetic/*.cpp src/magic/*.cpp 
 
-all: $(TARGET)
+bob:
+	@echo "getting ready..."
+	@$(CC) main.cpp $(SRCS) -o bob
 
-$(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $@
-
-%.o: src/%.cpp src/%.h
-	$(CC) -c $< -o $@
-
-clean:
-	rm -f $(TARGET) $(OBJS)
+run:
+	@./bob
