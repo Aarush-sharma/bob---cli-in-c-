@@ -40,4 +40,4 @@ bob
       add: adds n values (just enter the values)
       mul: multiplies n values (just enter the values)
 
--> Add the path to this exe file in your enviorement variables to use it globally :)
+-> Add the path to this exe file in your enviorement variables to use it globally :) 
