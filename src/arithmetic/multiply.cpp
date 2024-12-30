@@ -1,7 +1,6 @@
-#include <arithmetic.h>
-#include <vector>
+#include  "../tools.hpp"
 
-int math::mul(vector<int> &nums){
+int magic::mul(std::vector<int> &nums){
     int mul = 1;
     for (int num : nums){
         mul *=num;
