@@ -1,4 +1,4 @@
-#include "magic.h"
+#include "../tools.hpp"
 #include<random>
 
 int magic::roll(int size){

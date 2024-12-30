@@ -1,6 +1,6 @@
-#include "magic.h"
-#include <iostream>
+#include "../tools.hpp"
+using namespace std;
 
-void magic::greet(){
-    std::cout<< "konnichiwa 👾";
+string magic::greet(){
+    return "konnichiwa :D";
 }

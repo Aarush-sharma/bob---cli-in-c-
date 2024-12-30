@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-#include "magic.h"
+#include  "../tools.hpp"
 using namespace std;
 
 void merge(vector<int> &nums,int low,int mid,int high){
