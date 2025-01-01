@@ -35,3 +35,37 @@ std::string defaultquery (std::string query){
   }
 })";
 }
+
+void write_file(const std::string& filename, const std::string& text) {
+    std::ofstream file(filename);
+    if (!file) {
+        std::cerr << "Error: Unable to open file '" << filename << "' for writing\n";
+        return;
+    }
+    file << text << "\n";
+    file.close();
+    std::cout << "Successfully wrote to '" << filename << "'\n";
+}
+
+string read_file (std::string filename){
+    std::ifstream file(filename);
+    string data;
+    if(file){
+       getline(file, data);
+    }
+    return data;
+}
+
+vector<string> seperate_each_value(string s){
+  vector<string> res;
+  int count =0;
+  for(int i =0; i<s.size(); i++){
+    if(s[i] == ';' || i== s.size()-1){
+      if(i== s.size()-1) i++;
+      int size = i - count;
+      res.push_back(s.substr(count,size));
+      count = i+2;
+    }
+  }
+  return res;
+}
