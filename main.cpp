@@ -120,7 +120,9 @@ int main(int argc, char *argv[])
    {
       string help = R"(
       help:-
-      command-structre: bob <tags || keywords> <values> must be seperated by spaces if n
+      cmd-structure for http requests : bob <method-name> "url" -h "headers [each header must be seperated by ';' ]" -b "request body (not available for get method)
+      
+      command-structre for ai queries: bob <tags || keywords> <values> must be seperated by spaces if n
       To test: greet
       
       -q : query (value must be included in quotes)
