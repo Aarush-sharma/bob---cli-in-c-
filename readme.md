@@ -1,6 +1,24 @@
 # Bob CLI
 
-a simple and fast command-line curl client written in c++, performs CRUD operations in the terminal and can as well answer queries using ai. 👾
+a simple and fast command-line curl client written in c++, performs CRUD operations in the terminal, supports custom request headers, request body and params. 
+it can answer queries using ai. 👾
+## Examples
+- Http
+cmd structure : `bob <method-name> "url" -h "headers (each header must be seperated by ';' )" -b "request body (not available for get method)" `
+ 
+  - Get
+    `bob get "http://localhost:3000/" -h "token: abcxyz; authenticated: true" `
+   - Post
+     `bob post "http://localhost:3000/login" -h "Content-Type: application/json" -b "data:{email: xyz@emample.com, password: abc}" `
+
+- Ai queries
+cmd structure : `bob -q <query in double quotes ("")> `
+    - such as 
+      `bob -q "show nlp in python"`
+
+       ![image](https://github.com/user-attachments/assets/77393b7f-de51-4359-a39d-07086bea15ca)
+
+
 
 ## Build from source
 To run Bob CLI locally, ensure you have the following installed on your system: 
@@ -40,4 +58,4 @@ bob
       add: adds n values (just enter the values)
       mul: multiplies n values (just enter the values)
 
--> Add the path to this exe file in your enviorement variables to use it globally :) 
+-> Add the path to this exe file in your enviorement variables to use it globally :)
